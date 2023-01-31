@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    padding: 0;
+background-color: black;
+
+}
+
+.block{
+    position: relative;
+margin: 10% auto 0;
+width: 50%;
+height: 90%;
+background: linear-gradient(0deg , black , rgb(44, 40, 40));
+}
+
+.glow::before , .glow::after{
+    content:'';
+    position: absolute;
+left: -2px;
+top: -2px;
+background: linear-gradient(45deg , yellow , orange, #0f6 , #0ff , #f0f , #ff09ff , #6e0dd6 , #f30 , rgb(7, 63, 136));
+background-size: 400%;
+width: calc(100% + 5px);
+height: calc(100% + 5px);
+z-index: -1;
+animation: animate 20s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+
+.glow::after{
+    filter: blur(40px);
+    opacity: 0.99;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+   font-style:italic; 
+font-weight: bolder;
+}
+
+.row{
+    color: #0f6;
+}
+
+.jumbotron{
+    color: #6e0dd6;
+    background: linear-gradient(0deg , black , rgb(44, 40, 40));
+}
